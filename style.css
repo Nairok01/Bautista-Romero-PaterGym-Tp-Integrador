@@ -1,0 +1,732 @@
+/* ESTILOS GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #0b0c10;
+    color: #ffffff;
+    margin: 0;
+    padding-top: 80px;
+}
+
+/* NAVBAR */
+header {
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/*tamaño del logo y que el perfil*/
+header .logo img {
+    height: 50px;
+    object-fit: contain;
+}
+
+header .user-profile img {
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+}
+
+/* BOTONES DEL MENÚ */
+nav a {
+    color: #ff0000;
+    background-color: #ffcc00;
+    text-decoration: none;
+    font-family: 'Arial Narrow', sans-serif; 
+    font-weight: 900;
+    font-size: 0.95rem;
+    padding: 6px 18px;
+    margin: 0 4px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: transform 0.1s ease;
+}
+
+/* Efecto al pasar el mouse */
+nav a:hover {
+    transform: scale(1.05);
+}
+
+nav a.active {
+    background-color: #ffcc00;
+}
+
+/* ICONO */
+.hero img {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+/* CONTENEDORES DE SECCIÓN */
+.section-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    background-color: #ffffff;
+    color: #0c2340;
+    padding: 10px 20px;
+    display: table;
+    margin: 0 auto 30px auto;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: #333;
+    margin: 40px 0;
+}
+
+/* SECCIÓN UBICACIÓN */
+.ubicacion-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.info-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+}
+
+
+/* Estilos de los textos internos de la fila */
+.contacto-fila p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.4;
+}
+
+/* Estructura para alinear el icono redondo al lado de su respectivo texto */
+.contacto-fila {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Contenedor del icono */
+.icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; 
+}
+
+/* Control del tamaño de tus iconos con círculos incorporados */
+.icon-circle img {
+    width: 50px;  /* Bajamos a 50px para que mantenga perfecta proporción con el texto */
+    height: 50px;
+    object-fit: contain;
+}
+
+/* El recuadro del mapa a la derecha */
+.mapa {
+    flex: 1;
+    width: 100%;
+    max-width: 500px;
+    height: 300px; 
+    border-radius: 12px;
+    overflow: hidden; 
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* ==========================================
+   NUEVO COMPONENTE DE CLASES INTERACTIVO
+   ========================================== */
+
+.clases-modern-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.clases-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.clases-header span {
+    color: #ffcc00;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.clases-header h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff3333;
+    margin-top: 5px;
+}
+
+/* Contenedor Principal Flex */
+.clases-interactive-container {
+    display: flex;
+    gap: 30px;
+    height: 600px;
+}
+
+/* PANTALLA IZQUIERDA (FOTO Y DETALLES) */
+.clase-display-panel {
+    flex: 1.4;
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+    transition: background-image 0.3s ease;
+}
+
+.clase-display-content {
+    max-width: 500px;
+}
+
+.clase-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+}
+
+.tag-nivel {
+    color: #ffcc00;
+}
+
+.clase-display-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.clase-display-desc {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.clase-display-subdesc {
+    font-size: 0.9rem;
+    color: #aaaaaa;
+    margin-bottom: 25px;
+}
+
+.btn-ver-horarios {
+    display: inline-block;
+    background-color: #073575;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: transform 0.2s;
+}
+
+.btn-ver-horarios:hover {
+    transform: scale(1.05);
+}
+
+/* LISTA DERECHA (SIDEBAR) */
+.clases-sidebar-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Estilo para cada fila/ítem de la lista */
+.clase-sidebar-item {
+    display: flex;
+    align-items: center;
+    background-color: #0b0c10;
+    border: 1px solid #1a1a1a;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.clase-sidebar-item:hover {
+    background-color: #12131a;
+}
+
+/* Estado seleccionado / activo */
+.clase-sidebar-item.active {
+    background-color: #14161d;
+    border-left: 4px solid #ffcc00;
+}
+
+/* Miniatura de imagen */
+.clase-thumb {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.clase-item-text {
+    flex: 1;
+}
+
+.clase-item-text h4 {
+    color: #ffffff;
+    font-size: 1.05rem;
+    margin-bottom: 2px;
+}
+
+.clase-item-text span {
+    color: #666666;
+    font-size: 0.85rem;
+}
+
+/* Niveles a la derecha de la fila */
+.clase-item-level {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.nivel-bajo { color: #4caf50; }
+.nivel-medio { color: #ff9800; }
+.nivel-alto { color: #f44336; }
+
+/* Personalización de la barra de scroll de la lista */
+.clases-sidebar-list::-webkit-scrollbar { width: 6px; }
+.clases-sidebar-list::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
+
+/* SECCIÓN FORMULARIO DE CONTACTO */
+.contacto-section {
+    background-color: #111215;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contacto-section h3 {
+    color: #ffcc00;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+
+.contacto-form {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid #ffcc00;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.form-group-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    background-color: #ccc;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    color: #000;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #e6b800;
+}
+
+/* ESTILO PARA LA PÁGINA 2 DE HORARIOS */
+
+.horarios-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* CONTENEDOR RESPONSIVO POR SI SE VE EN MÓVILES */
+.tabla-responsiva {
+    overflow-x: auto;
+}
+
+/* TABLA GENERAL */
+.tabla-horarios {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    color: #ffffff;
+}
+
+/* CABECERA DE LA TABLA (AMARILLO/DORADO OSCURO) */
+.tabla-horarios th {
+    background-color: #9c7a1e; 
+    color: #ffcc00;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Redondear esquinas superiores de la cabecera */
+.tabla-horarios th:first-child { border-top-left-radius: 12px; }
+.tabla-horarios th:last-child { border-top-right-radius: 12px; }
+
+/* FILAS DE LA TABLA */
+.tabla-horarios tbody tr {
+    background-color: #1e1e1e;
+}
+
+.tabla-horarios td {
+    padding: 10px 5px;
+    vertical-align: middle;
+    height: 55px;
+}
+
+/* COLUMNA DE LAS HORAS */
+.hora-col {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    width: 10%;
+    background-color: transparent;
+}
+
+/* DISEÑO DE LAS ETIQUETAS DE CLASES (GLOBOS) */
+.clase {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    width: 85%;
+    max-width: 120px;
+}
+
+/* Variantes de color según tu primer diseño */
+.func {
+    background-color: #2b3a4a;
+    color: #79b0ec;
+    border: 1px solid #3d566e;
+}
+
+.fuerza {
+    background-color: #2e2316;
+    color: #e59833;
+    border: 1px solid #4a3720;
+}
+
+.yoga {
+    background-color: #1c352d;
+    color: #52b788;
+    border: 1px solid #2d5a47;
+}
+
+.zumba {
+    background-color: #3d1e22;
+    color: #e65c65;
+    border: 1px solid #5e2d33;
+}
+
+.boxing {
+    background-color: #242424;
+    color: #b3b3b3;
+    border: 1px solid #3a3a3a;
+}
+
+.judo {
+    background-color: #1c3238;
+    color: #4ea8de;
+    border: 1px solid #2a4b54;
+}
+
+/* ESTILOS PARA LA PÁGINA DE PROFESORES */
+
+.profesores-container {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+/* Contenedor negro exterior de la tarjeta */
+.profe-card {
+    background-color: #000000;
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    position: relative;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Ajustes de la imagen de perfil del profesor */
+.profe-img img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+/* Bloque de texto e información */
+.profe-info {
+    flex: 1;
+    padding-bottom: 45px;
+}
+
+.profe-info h2 {
+    color: #ff0000;
+    font-size: 1.8rem;
+    font-weight: 900; 
+    text-transform: uppercase;
+    margin: 0 0 12px 0;
+    letter-spacing: 0.5px;
+}
+
+.profe-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profe-info ul li {
+    font-size: 0.95rem;
+    color: #ffffff;
+    margin-bottom: 6px;
+    line-height: 1.4;
+    position: relative;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+}
+
+/* El puntito blanco personalizado antes de cada texto */
+.profe-info ul li::before {
+    content: "•";
+    color: #ffffff;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Contenedor para clavar el botón al extremo inferior derecho */
+.btn-card-container {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+}
+
+/* Botón Blanco "CONTACTAR" */
+.btn-contactar {
+    background-color: #073575;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Arial Narrow', sans-serif;
+    font-weight: 900;
+    font-size: 1.15rem;
+    padding: 8px 32px;
+    border-radius: 6px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+/* Efecto hover interactivo */
+.btn-contactar:hover {
+    transform: scale(1.05);
+    background-color: #073575;
+}
+
+/* RESPONSIVE: Evita que se rompa en pantallas de celulares */
+@media (max-width: 650px) {
+    .profe-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 85px; 
+    }
+
+    .profe-info {
+        padding-bottom: 0;
+    }
+
+    .profe-info ul li {
+        justify-content: center;
+        padding-left: 0;
+    }
+    
+    .profe-info ul li::before {
+        display: none; /* Quitamos el puntito absoluto en celu para poder centrar el texto bien */
+    }
+
+    .btn-card-container {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: 20px;
+    }
+}
+
+.btn-contactar:hover {
+    background-color: #073575;
+}
+
+/* Ajuste responsivo básico */
+@media (max-width: 650px) {
+    .profe-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .profe-info ul {
+        padding-left: 0;
+    }
+    .btn-card-container {
+        justify-content: center;
+    }
+}
+
+/* ESTILOS PARA LA PÁGINA DE CONTACTO */
+
+.contacto-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px); /* Centra verticalmente restando la barra de navegación */
+    padding: 20px;
+}
+
+.contacto-section-page {
+    width: 100%;
+    max-width: 750px; /* Ancho ideal según la imagen */
+    text-align: center;
+}
+
+.contacto-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* El recuadro oscuro con el borde amarillo redondeado */
+.contacto-form-page {
+    background-color: #141414;
+    border: 3px solid #ffcc00;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* El contenedor del botón en esta pantalla específica */
+.btn-submit-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Botón estilizado centrado */
+.btn-submit-page {
+    background-color: #ffcc00;
+    color: #000000;
+    border: none;
+    width: 45%;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit-page:hover {
+    background-color: #e6b800;
+}
+

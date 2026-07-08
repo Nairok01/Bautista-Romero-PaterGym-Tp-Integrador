@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaterGym - Contacto</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+        </symbol>
+        <symbol id="info-fill" viewBox="0 0 16 16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+        </symbol>
+    </svg>
+
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <a href="index.html">INICIO</a>
+            <a href="clases.html">CLASES</a>
+            <a href="profesores.html">PROFESORES</a>
+            <a href="contactos.html" class="active">CONTACTOS</a>
+        </nav>
+        <div class="user-profile">
+            <img src="img/icon.png" alt="Usuario">
+        </div>
+    </header>
+
+    <main class="contacto-page-container">
+        <section class="contacto-section-page">
+            <h1 class="contacto-title">ENVIANOS UN MENSAJE</h1>
+            
+            <form id="form-contacto" class="contacto-form-page">
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" rows="8" required></textarea>
+                </div>
+                <div class="btn-submit-container">
+                    <button type="submit" class="btn-submit-page">Enviar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <div id="contenedor-alerta" class="fixed-bottom p-3 d-none" style="max-width: 450px; left: auto; right: 0;">
+        
+        <div class="alert alert-primary d-flex align-items-center m-0" role="alert">
+            <svg class="bi flex-shrink-0 mr-2" role="img" aria-label="Info:" width="16" height="16" style="fill: currentColor;">
+                <use xlink:href="#info-fill"/>
+            </svg>
+            <div>
+                ¡Mensaje enviado! Te responderemos en breve, muchas gracias.
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script>
+        document.getElementById('form-contacto').addEventListener('submit', function(event) {
+            event.preventDefault(); // Frena la recarga de la página
+            
+            // Usamos las clases nativas para mostrar el contenedor quitando 'd-none'
+            const alerta = document.getElementById('contenedor-alerta');
+            alerta.classList.remove('d-none');
+            
+            this.reset();
+
+            // Opcional: Se vuelve a esconder a los 4 segundos
+            setTimeout(function() {
+                alerta.classList.add('d-none');
+            }, 4000);
+        });
+    </script>
+</body>
+</html>
